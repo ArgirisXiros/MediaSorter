@@ -9,10 +9,10 @@ public static class CLI {
     public static readonly string[] SupportedImageTypes = new string[] {"jpg", "jpeg", "png"};
 
     public static int Main(string[] args) {
-        if (CollectionType != MediaCollectionType.GoogleTakeout) {
-            Console.WriteLine("Unsopported Collection Type. Exiting");
-            Environment.Exit(0);
-        }
+        // if (CollectionType != MediaCollectionType.GoogleTakeout) {
+        //     Console.WriteLine("Unsopported Collection Type. Exiting");
+        //     Environment.Exit(0);
+        // }
 
         Console.WriteLine($"Lookup directory: {LookupDirectory}");
 
