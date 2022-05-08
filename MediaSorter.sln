@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaSorter.CLI", "MediaSorter.CLI\MediaSorter.CLI.csproj", "{EC1E5C49-450B-4640-9098-44407A977B89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaSorter.UI.CLI", "src\UI\MediaSorter.UI.CLI\MediaSorter.UI.CLI.csproj", "{EC1E5C49-450B-4640-9098-44407A977B89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{20182C05-BC95-45B3-A398-8441BA900536}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaSorter.Core", "src\MediaSorter.Core\MediaSorter.Core.csproj", "{376DCD60-859D-4797-A769-87010978A8DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaSorter.APP", "src\MediaSorter.APP\MediaSorter.APP.csproj", "{81728FF5-0FB6-47CF-9F4D-8CA1D9F77AA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +24,17 @@ Global
 		{EC1E5C49-450B-4640-9098-44407A977B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC1E5C49-450B-4640-9098-44407A977B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC1E5C49-450B-4640-9098-44407A977B89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{376DCD60-859D-4797-A769-87010978A8DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{376DCD60-859D-4797-A769-87010978A8DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{376DCD60-859D-4797-A769-87010978A8DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{376DCD60-859D-4797-A769-87010978A8DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81728FF5-0FB6-47CF-9F4D-8CA1D9F77AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81728FF5-0FB6-47CF-9F4D-8CA1D9F77AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81728FF5-0FB6-47CF-9F4D-8CA1D9F77AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81728FF5-0FB6-47CF-9F4D-8CA1D9F77AA7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{376DCD60-859D-4797-A769-87010978A8DB} = {20182C05-BC95-45B3-A398-8441BA900536}
+		{81728FF5-0FB6-47CF-9F4D-8CA1D9F77AA7} = {20182C05-BC95-45B3-A398-8441BA900536}
 	EndGlobalSection
 EndGlobal
