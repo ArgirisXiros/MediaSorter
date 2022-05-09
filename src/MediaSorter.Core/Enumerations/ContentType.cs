@@ -1,8 +1,9 @@
 namespace MediaSorter.Core.Enumerations;
 
-public enum MediaType
+public enum ContentType
 {
     undefined,
+    unsopported,
 
     jpg,
     jpeg,

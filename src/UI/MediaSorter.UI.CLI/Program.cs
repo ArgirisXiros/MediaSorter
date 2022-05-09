@@ -1,4 +1,5 @@
 ﻿using MediaSorter.APP.Enumerations;
+using MediaSorter.Core.Entities;
 
 namespace MediaSorter.UI;
 
@@ -16,15 +17,18 @@ public static class CLI {
 
         Console.WriteLine($"Lookup directory: {LookupDirectory}");
 
-        var filePaths = Directory.GetFiles(LookupDirectory, "*.*", SearchOption.AllDirectories)
-            .Where(f => SupportedImageTypes.Contains(f.Split(".").Last().ToLower()))
-            .ToList();
-        Console.WriteLine($"Found: {filePaths.Count} files.");
+        var folder = new Folder("./");
+        Console.WriteLine(folder.Path);
 
-        var extensions = filePaths.GroupBy(f => f.Split(".").Last()).ToList();
-        foreach (var extension in extensions) {
-            Console.WriteLine(extension.First().Split(".").Last());
-        }
+        // var filePaths = Directory.GetFiles(LookupDirectory, "*.*", SearchOption.AllDirectories)
+        //     .Where(f => SupportedImageTypes.Contains(f.Split(".").Last().ToLower()))
+        //     .ToList();
+        // Console.WriteLine($"Found: {filePaths.Count} files.");
+
+        // var extensions = filePaths.GroupBy(f => f.Split(".").Last()).ToList();
+        // foreach (var extension in extensions) {
+        //     Console.WriteLine(extension.First().Split(".").Last());
+        // }
 
         return 0;
     }
