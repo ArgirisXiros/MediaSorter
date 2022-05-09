@@ -1,5 +1,7 @@
 ﻿using MediaSorter.APP.Enumerations;
+using MediaSorter.APP.Services;
 using MediaSorter.Core.Entities;
+using MediaSorter.Core.Services;
 
 namespace MediaSorter.UI;
 
@@ -17,8 +19,17 @@ public static class CLI {
 
         Console.WriteLine($"Lookup directory: {LookupDirectory}");
 
-        var folder = new Folder("./");
+        IDirectoryService directoryService = new GoogleTakeoutDirectoryService();
+
+        var folder = directoryService.AnalyzeDirectory(LookupDirectory);
         Console.WriteLine(folder.Path);
+        Console.WriteLine(folder.Contents.Count);
+
+        // foreach(var content in folder.Contents)
+        // {
+        //     Console.WriteLine(content.Name);
+        //     Console.WriteLine(content.Folder.Path);
+        // }
 
         // var filePaths = Directory.GetFiles(LookupDirectory, "*.*", SearchOption.AllDirectories)
         //     .Where(f => SupportedImageTypes.Contains(f.Split(".").Last().ToLower()))

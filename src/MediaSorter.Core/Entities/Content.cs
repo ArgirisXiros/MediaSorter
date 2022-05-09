@@ -7,20 +7,15 @@ public class Content
 {
     public string Name { get; private set; }
     public ContentType Type {get; private set;}
-    public Folder? Folder { get; private set; }
+    public Folder Folder { get; private set; }
 
-    public Content(string name)
+    public Content(string name, Folder folder)
     {
         ArgumentNullException.ThrowIfNull(name);
+        ArgumentNullException.ThrowIfNull(folder);
 
         Name = name;
         Type = name.ToContentType();
-    }
-
-    public void SetFolder(Folder folder)
-    {
-        ArgumentNullException.ThrowIfNull(folder);
-
         Folder = folder;
     }
 }

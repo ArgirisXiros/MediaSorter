@@ -3,50 +3,37 @@ namespace MediaSorter.Core.Entities;
 public class Folder
 {
     public string Path { get; private set; }
+    public Folder? Parent { get; private set; }
 
     public List<Content> Contents { get; private set; }
-
-    public Folder? Parent { get; private set; }
     public List<Folder> SubFolders { get; private set; }
 
-    public Folder(string path)
+    public Folder(string path, Folder? parent)
     {
         ArgumentNullException.ThrowIfNull(path);
 
-        if (!IsPathValid(path))
-            throw new ArgumentException($"Invalid folder path: '{path}'", nameof(path));
-
-        Path = System.IO.Path.GetFullPath(path);
+        Path = path;
+        Parent = parent;
 
         Contents = new List<Content>();
         SubFolders = new List<Folder>();
     }
 
-    private static bool IsPathValid(string path)
+    public Folder(string path) : this(path, null)
     {
-        return Directory.Exists(path);
     }
 
-    public void AddContent(Content content)
+    public void Add(Content content)
     {
         ArgumentNullException.ThrowIfNull(content);
 
-        content.SetFolder(this);
         Contents.Add(content);
     }
 
-    public void SetParent(Folder parent)
-    {
-        ArgumentNullException.ThrowIfNull(parent);
-        
-        Parent = parent;
-    }
-
-    public void AddSubFolder(Folder subFolder)
+    public void Add(Folder subFolder)
     {
         ArgumentNullException.ThrowIfNull(subFolder);
 
-        subFolder.SetParent(this);
         SubFolders.Add(subFolder);
     }
 }
