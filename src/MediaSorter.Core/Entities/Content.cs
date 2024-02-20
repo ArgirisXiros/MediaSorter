@@ -18,4 +18,19 @@ public class Content
         Type = name.ToContentType();
         Folder = folder;
     }
+
+    public string FilePath()
+    {
+        return $"{Folder.Path}{Name}";
+    }
+
+    public string MetadataFilePath()
+    {
+        var metaDataFileName = $"{Name}.json";
+
+        if (metaDataFileName.Length > 51)
+            metaDataFileName = $"{Name.Substring(0, 46)}.json";
+            
+        return $"{Folder.Path}{metaDataFileName}";
+    }
 }

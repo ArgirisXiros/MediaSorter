@@ -36,4 +36,11 @@ public class Folder
 
         SubFolders.Add(subFolder);
     }
+
+    public string? PatentFolderName()
+    {
+        var parent = Directory.GetParent(Path);
+
+        return parent?.Name;
+    }
 }
