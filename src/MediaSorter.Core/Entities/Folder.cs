@@ -2,8 +2,8 @@ namespace MediaSorter.Core.Entities;
 
 public class Folder
 {
-    public string Path { get; private set; }
-    public Folder? Parent { get; private set; }
+    public string Path { get; init; }
+    public Folder? Parent { get; init; }
 
     public List<Content> Contents { get; private set; }
     public List<Folder> SubFolders { get; private set; }
@@ -35,12 +35,5 @@ public class Folder
         ArgumentNullException.ThrowIfNull(subFolder);
 
         SubFolders.Add(subFolder);
-    }
-
-    public string? PatentFolderName()
-    {
-        var parent = Directory.GetParent(Path);
-
-        return parent?.Name;
     }
 }

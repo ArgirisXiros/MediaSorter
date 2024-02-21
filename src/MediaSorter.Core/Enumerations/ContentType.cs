@@ -1,11 +1,12 @@
 namespace MediaSorter.Core.Enumerations;
 
-public enum ContentType
+public enum ContentType : short
 {
-    undefined,
-    unsopported,
+    undefined = 0,
+    unsupported = 1,
 
-    jpg,
-    jpeg,
-    png
+    jpg = 10,
+    jpeg = 11,
+    
+    png = 20
 }

@@ -1,5 +1,8 @@
 build:
 	dotnet build
+build_all:
+	dotnet clean
+	dotnet build
 clean:
 	dotnet clean
 restore:
