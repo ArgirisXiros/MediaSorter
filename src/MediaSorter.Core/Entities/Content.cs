@@ -9,6 +9,8 @@ public class Content
     public ContentType Type {get; private set;}
     public Folder Folder { get; private set; }
 
+    public string FullPath => $"{Folder.Path}{Name}";
+
     public Content(string name, Folder folder)
     {
         ArgumentNullException.ThrowIfNull(name);
@@ -17,20 +19,5 @@ public class Content
         Name = name;
         Type = name.ToContentType();
         Folder = folder;
-    }
-
-    public string FilePath()
-    {
-        return $"{Folder.Path}{Name}";
-    }
-
-    public string MetadataFilePath()
-    {
-        var metaDataFileName = $"{Name}.json";
-
-        if (metaDataFileName.Length > 51)
-            metaDataFileName = $"{Name.Substring(0, 46)}.json";
-            
-        return $"{Folder.Path}{metaDataFileName}";
     }
 }

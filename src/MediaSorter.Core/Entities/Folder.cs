@@ -1,3 +1,5 @@
+using System.Collections.Immutable;
+
 namespace MediaSorter.Core.Entities;
 
 public class Folder
@@ -5,18 +7,18 @@ public class Folder
     public string Path { get; init; }
     public Folder? Parent { get; init; }
 
-    public List<Content> Contents { get; private set; }
-    public List<Folder> SubFolders { get; private set; }
+    public ImmutableArray<Content> Contents { get; private set; }
+    public ImmutableArray<Folder> SubFolders { get; private set; }
 
     public Folder(string path, Folder? parent)
     {
         ArgumentNullException.ThrowIfNull(path);
 
-        Path = path;
+        Path = path.EndsWith('/') ? path : path + "/";
         Parent = parent;
 
-        Contents = new List<Content>();
-        SubFolders = new List<Folder>();
+        Contents = new ImmutableArray<Content>();
+        SubFolders = new ImmutableArray<Folder>();
     }
 
     public Folder(string path) : this(path, null)
@@ -27,13 +29,13 @@ public class Folder
     {
         ArgumentNullException.ThrowIfNull(content);
 
-        Contents.Add(content);
+        Contents = Contents.AddRange();
     }
 
     public void Add(Folder subFolder)
     {
         ArgumentNullException.ThrowIfNull(subFolder);
 
-        SubFolders.Add(subFolder);
+        SubFolders = SubFolders.Add(subFolder);
     }
 }

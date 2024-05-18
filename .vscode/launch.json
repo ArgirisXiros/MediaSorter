@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/MediaSorter.CLI/bin/Debug/net6.0/MediaSorter.CLI.dll",
+            "program": "${workspaceFolder}/src/UI/MediaSorter.UI.CLI/bin/Debug/net8.0/MediaSorter.UI.CLI.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/MediaSorter.CLI",
+            "cwd": "${workspaceFolder}/src/UI/MediaSorter.UI.CLI",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
