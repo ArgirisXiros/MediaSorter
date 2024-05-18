@@ -1,23 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaSorter.UI.CLI", "src\UI\MediaSorter.UI.CLI\MediaSorter.UI.CLI.csproj", "{EC1E5C49-450B-4640-9098-44407A977B89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaSorter.UI.CLI", "src\UI\MediaSorter.UI.CLI\MediaSorter.UI.CLI.csproj", "{EC1E5C49-450B-4640-9098-44407A977B89}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{20182C05-BC95-45B3-A398-8441BA900536}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaSorter.Core", "src\MediaSorter.Core\MediaSorter.Core.csproj", "{376DCD60-859D-4797-A769-87010978A8DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaSorter.Core", "src\MediaSorter.Core\MediaSorter.Core.csproj", "{376DCD60-859D-4797-A769-87010978A8DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaSorter.APP", "src\MediaSorter.APP\MediaSorter.APP.csproj", "{81728FF5-0FB6-47CF-9F4D-8CA1D9F77AA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaSorter.APP", "src\MediaSorter.APP\MediaSorter.APP.csproj", "{81728FF5-0FB6-47CF-9F4D-8CA1D9F77AA7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{A98D03A0-B3A8-45BF-8F32-CD0CC9DF080B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{EC1E5C49-450B-4640-9098-44407A977B89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -33,8 +30,13 @@ Global
 		{81728FF5-0FB6-47CF-9F4D-8CA1D9F77AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81728FF5-0FB6-47CF-9F4D-8CA1D9F77AA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{376DCD60-859D-4797-A769-87010978A8DB} = {20182C05-BC95-45B3-A398-8441BA900536}
-		{81728FF5-0FB6-47CF-9F4D-8CA1D9F77AA7} = {20182C05-BC95-45B3-A398-8441BA900536}
+		{EC1E5C49-450B-4640-9098-44407A977B89} = {A98D03A0-B3A8-45BF-8F32-CD0CC9DF080B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44849AF4-C948-4686-A60A-CA9A480270E8}
 	EndGlobalSection
 EndGlobal
